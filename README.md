@@ -1,6 +1,6 @@
 # Git Practice – Local, Branching, and History
 
-This repository is for practicing core Git commands: init, add/commit, amend, branching, merging, rebase, and pushing to a remote. It also notes a few troubleshooting steps (DNS, editor, rebase issues). [web:102][web:104]
+This repository is for practicing core Git commands: init, add/commit, amend, branching, merging, rebase, and pushing to a remote. It also notes a few troubleshooting steps (DNS, editor, rebase issues). 
 
 ## 1. Initialize and first commit
 
@@ -21,7 +21,7 @@ This repository is for practicing core Git commands: init, add/commit, amend, br
    ```
 
 ### Goal
-Understand working directory → staging → local repository using `git add` and `git commit`. [web:104]
+Understand working directory → staging → local repository using `git add` and `git commit`. 
 
 ---
 
@@ -41,7 +41,7 @@ Understand working directory → staging → local repository using `git add` an
    git commit -m "Explain restaging after edits"
    ```
 
-Learn that any new changes after a commit must be staged again before the next commit. [web:12][web:15][web:18]
+Learn that any new changes after a commit must be staged again before the next commit. 
 
 ### Task B: Fix the last commit with amend
 1. Fix a typo or add a small extra change in the same file.
@@ -54,8 +54,7 @@ Learn that any new changes after a commit must be staged again before the next c
    git commit --amend
    ```
 
-Use amend when you need to correct the latest commit’s message or content. [web:57][web:59]
-
+Use amend when you need to correct the latest commit’s message or content.
 ---
 
 ## 3. Handling the commit editor (Vim)
@@ -70,7 +69,7 @@ Lines starting with '#' will be ignored, and an empty message aborts the commit.
 ### How to use it
 - Write your commit message at the top, above the `#` lines.
 - Press `Esc`, type `:wq`, press `Enter` to save and finish the commit.
-- Press `Esc`, type `:q!`, press `Enter` to exit without saving. [web:21][web:23][web:25]
+- Press `Esc`, type `:q!`, press `Enter` to exit without saving.
 
 If you prefer to avoid the editor, use:
 
@@ -102,7 +101,7 @@ git checkout -b feature/style-page
    git commit -m "Add style.html in feature branch"
    ```
 
-Changes stay isolated in that branch until merged into `main`. [web:67][web:72]
+Changes stay isolated in that branch until merged into `main`.
 
 ---
 
@@ -116,7 +115,7 @@ git push -u origin main
 git push origin --delete master
 ```
 
-Optionally set `main` as the default in the hosting service settings and configure new repos globally: [web:52][web:56]
+Optionally set `main` as the default in the hosting service settings and configure new repos globally: [
 
 ```bash
 git config --global init.defaultBranch main
@@ -135,7 +134,7 @@ git pull origin main
 Remember:
 - `origin` = remote name.
 - `main` = branch name.
-- `git pull main` alone is invalid because Git expects a remote name first. [web:90][web:95]
+- `git pull main` alone is invalid because Git expects a remote name first.
 
 ---
 
@@ -149,7 +148,7 @@ git branch -M main          # if you use main
 git push -u origin main
 ```
 
-This connects your local repository to the remote and uploads your history. [web:31][web:32][web:36]
+This connects your local repository to the remote and uploads your history.
 
 ---
 
@@ -162,7 +161,7 @@ From your feature branch (for example `stylef`):
 git pull --rebase origin main
 ```
 
-This rebases your branch on top of the latest `main` commits, rewriting your branch history to be clean and linear. [web:57][web:61][web:99]
+This rebases your branch on top of the latest `main` commits, rewriting your branch history to be clean and linear. 
 
 ### Fix a stuck rebase state
 If `git rebase --abort` or `git rebase --quit` fails with messages about `.git/rebase-merge`:
@@ -172,7 +171,7 @@ If `git rebase --abort` or `git rebase --quit` fails with messages about `.git/r
    ```bash
    git status
    ```
-to confirm the repository is clean. [web:39][web:44]
+to confirm the repository is clean. 
 
 ---
 
@@ -180,7 +179,7 @@ to confirm the repository is clean. [web:39][web:44]
 
 If you see DNS errors (sites not resolving, “DNS server not responding”):
 
-1. Restart router and PC. [web:86][web:87]
+1. Restart router and PC. 
 2. Flush DNS cache (Windows):
    ```bash
    ipconfig /flushdns
@@ -193,9 +192,9 @@ If you see DNS errors (sites not resolving, “DNS server not responding”):
    ```
 4. Set a public DNS (e.g. Google or Cloudflare):
    - 8.8.8.8 and 8.8.4.4
-   - 1.1.1.1 and 1.0.0.1 [web:74][web:79][web:87]
+   - 1.1.1.1 and 1.0.0.1 
 
-If office DNS is misconfigured, report it to IT/HR with the error message and time of issue. [web:74][web:84]
+If office DNS is misconfigured, report it to IT/HR with the error message and time of issue. 
 
 ---
 
@@ -220,11 +219,7 @@ If office DNS is misconfigured, report it to IT/HR with the error message and ti
   - `git remote -v`
   - `git remote add origin <url>`
   - `git push -u origin main`
-  - `git pull origin main` [web:52][web:104]
+  - `git pull origin main` 
 
 ---
 
-Happy practicing! Each section above can be turned into a small lab: follow the commands, then run `git log`, `git status`, and `git branch` to see what changed after each step. [web:100][web:102]
-```
-
-If you tell me your actual branch names and files (like `stylef`, `index.html`), I can customize this README exactly to your project.
